@@ -353,7 +353,7 @@ body .sidebar {
   width: max(20vw, 250px);
 }
 body .main {
-  width: max(80vw, 100vw - 250px);
+  width: min(80vw, 100vw - 250px);
 }
 
 .sidebar {
