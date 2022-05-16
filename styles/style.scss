@@ -1,0 +1,157 @@
+@use "normalize";
+@use "classStyles" as helper;
+
+body {
+	display: flex;
+	& .sidebar {
+		width: max( 20vw, 250px );
+	}
+	& .main {
+		margin-left: max( 20vw, 250px );
+		width: max( 80vw, 100vw - 250px);
+	}
+}
+
+.sidebar {
+	position: fixed;
+	height: 100vh;
+	@include helper.gradient( helper.$heavier, helper.$medium, horizontal);
+	overflow-y: auto;
+	border-right: 5px double #000;
+}
+
+.logo {
+	@include helper.flex( row, center, center );
+	padding: 20px;
+
+	color: helper.$repel-light;
+	@include helper.shadow( #000 );
+	@include helper.font-size( 20px );
+	font-family: helper.$titan;
+	font-weight: 800;
+
+	& span {
+		display: inline-block;
+		animation: wave 1s infinite calc( 0.1s * var(--i) );
+	}
+
+	@keyframes wave {
+		0%, 40%, 100% {
+			transform: translateY(0);
+		}
+		20% {
+			transform: translateY(-5px);
+		}
+	}
+}
+
+.icon-white {
+	color: helper.$repel-light;
+	padding-right: 10px;
+}
+
+.children {
+	@include helper.flex( column, flex-start );
+	gap: 40px;
+	margin-bottom: 30px;
+
+	ul {
+		margin: 0px;
+		padding: 0px;
+		width: 100%;
+
+		list-style-type: none;
+		color: helper.$repel-light;
+		li {
+			@include helper.flex( row, flex-start );
+			margin: 0px 15px;
+			padding: 5px 10px;
+			border-radius: 10px;
+			gap: 7px;
+			@include helper.shadow( #000 );
+
+			font-family: helper.$sans;
+
+			&:hover {
+				@include helper.gradient( helper.$light, helper.$lightest, horizontal);
+			}
+
+			&.flex-far {
+				@include helper.flex( row, space-between );
+
+				& div {
+					@include helper.flex();
+					gap: 7px;
+				}
+			}
+		}
+	}
+}
+
+.main {
+	@include helper.flex( column, flex-start );
+}
+
+header {
+	@include helper.flex( row, space-between );
+	@include helper.gradient(  helper.$repel-heavy, helper.$bodyBG, vertical );
+	width: min( 80vw, 100vw - 300px );
+
+	& .search-bar {
+		@include helper.flex();
+		gap: 10px;
+	}
+
+	& .search-wrap {
+		@include helper.flex( column, flex-start );
+		position: relative;
+		padding: 10px;
+		margin-bottom: 30px;
+		width: 40%;
+		font-family: helper.$tarp;
+		font-weight: 1500;
+
+		& input {
+			display: block;
+			height: 20px;
+			width: 100%;
+	
+			background-color: transparent;
+			border: none;
+			border-bottom: 1px solid #fff;
+			color: helper.$medium;
+	
+			&:focus {
+				outline: none;
+				border-bottom: 2px solid helper.$medium;
+			}
+	
+			&:focus ~label,
+			&:not( :placeholder-shown ) ~label {
+				top: -12px;
+				color: helper.$medium;
+			}
+		}
+	
+		& label {
+			position: absolute;
+			top: 3px;
+			color: helper.$medium;
+			pointer-events: none;
+			transition: all ease 0.2s;
+		}
+	}
+
+	& .drop-pfp {
+		& .pfp {
+			.pfp-pic {
+				@include helper.box(50px);
+				@include helper.circle();
+			}
+		}
+
+		& .drop-content {
+			display: none;
+		}
+	}
+}
