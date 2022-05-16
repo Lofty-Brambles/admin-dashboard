@@ -373,7 +373,7 @@ body .main {
   align-items: center;
   padding: 20px;
   color: #f1f5f9;
-  text-shadow: 1.5px 1.5px 0px #000, -1.5px 1.5px 0px #000, 1.5px -1.5px 0px #000, -1.5px -1.5px 0px #000;
+  text-shadow: 1px 1px 0px #000, -1px 1px 0px #000, 1px -1px 0px #000, -1px -1px 0px #000;
   font-size: 20px;
   font-size: 1.25rem;
   font-family: "Titan One", cursive;
@@ -421,7 +421,7 @@ body .main {
   padding: 5px 10px;
   border-radius: 10px;
   gap: 7px;
-  text-shadow: 1.5px 1.5px 0px #000, -1.5px 1.5px 0px #000, 1.5px -1.5px 0px #000, -1.5px -1.5px 0px #000;
+  text-shadow: 1px 1px 0px #000, -1px 1px 0px #000, 1px -1px 0px #000, -1px -1px 0px #000;
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
 }
 .children ul li:hover {
@@ -460,6 +460,7 @@ header {
   background: -webkit-linear-gradient(top, #0f172a, #ccc);
   background: linear-gradient(to bottom, #0f172a, #ccc);
   width: min(80vw, 100vw - 300px);
+  padding-top: 20px;
 }
 header .search-bar {
   display: flex;
@@ -467,50 +468,182 @@ header .search-bar {
   justify-content: center;
   align-items: center;
   gap: 10px;
+  padding: 0px 20px;
 }
-header .search-wrap {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  position: relative;
-  padding: 10px;
-  margin-bottom: 30px;
-  width: 40%;
-  font-family: "Tapestry", Helvetica, Arial, sans-serif;
-  font-weight: 1500;
+header .search-bar input {
+  width: 40vw;
+  padding: 15px;
+  background-color: #fff;
+  border: 2px solid #000;
+  color: #111;
+  box-shadow: 3px 1px 0px 2px, 0px -1px 0px 2px rgba(0, 0, 0, 0.62);
+  height: 60px;
+  transform: skew(-3deg, 1deg);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
 }
-header .search-wrap input {
-  display: block;
-  height: 20px;
-  width: 100%;
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid #fff;
-  color: #0d9488;
-}
-header .search-wrap input:focus {
+header .search-bar input:focus, header .search-bar input:valid {
   outline: none;
-  border-bottom: 2px solid #0d9488;
 }
-header .search-wrap input:focus ~ label, header .search-wrap input:not(:placeholder-shown) ~ label {
-  top: -12px;
-  color: #0d9488;
+header .search-bar input:focus ~ ul li:nth-child(1)::before, header .search-bar input:valid ~ ul li:nth-child(1)::before {
+  filter: blur(20px);
+  transform: translate(0, -35px) rotate(-210deg);
 }
-header .search-wrap label {
+header .search-bar input:focus ~ ul li:nth-child(1)::after, header .search-bar input:valid ~ ul li:nth-child(1)::after {
+  filter: blur(0);
+  transform: scale(1) rotate(0);
+}
+header .search-bar input:focus ~ ul li:nth-child(2)::before, header .search-bar input:valid ~ ul li:nth-child(2)::before {
+  filter: blur(20px);
+  transform: translate(0, -35px) rotate(-210deg);
+}
+header .search-bar input:focus ~ ul li:nth-child(2)::after, header .search-bar input:valid ~ ul li:nth-child(2)::after {
+  filter: blur(0);
+  transform: scale(1) rotate(0);
+}
+header .search-bar input:focus ~ ul li:nth-child(3)::before, header .search-bar input:valid ~ ul li:nth-child(3)::before {
+  filter: blur(20px);
+  transform: translate(0, -35px) rotate(-210deg);
+}
+header .search-bar input:focus ~ ul li:nth-child(3)::after, header .search-bar input:valid ~ ul li:nth-child(3)::after {
+  filter: blur(0);
+  transform: scale(1) rotate(0);
+}
+header .search-bar input:focus ~ ul li:nth-child(4)::before, header .search-bar input:valid ~ ul li:nth-child(4)::before {
+  filter: blur(20px);
+  transform: translate(0, -35px) rotate(-210deg);
+}
+header .search-bar input:focus ~ ul li:nth-child(4)::after, header .search-bar input:valid ~ ul li:nth-child(4)::after {
+  filter: blur(0);
+  transform: scale(1) rotate(0);
+}
+header .search-bar input:focus ~ ul li:nth-child(5)::before, header .search-bar input:valid ~ ul li:nth-child(5)::before {
+  filter: blur(20px);
+  transform: translate(0, -35px) rotate(-210deg);
+}
+header .search-bar input:focus ~ ul li:nth-child(5)::after, header .search-bar input:valid ~ ul li:nth-child(5)::after {
+  filter: blur(0);
+  transform: scale(1) rotate(0);
+}
+header .search-bar input:focus ~ ul li:nth-child(6)::before, header .search-bar input:valid ~ ul li:nth-child(6)::before {
+  filter: blur(20px);
+  transform: translate(0, -35px) rotate(-210deg);
+}
+header .search-bar input:focus ~ ul li:nth-child(6)::after, header .search-bar input:valid ~ ul li:nth-child(6)::after {
+  filter: blur(0);
+  transform: scale(1) rotate(0);
+}
+header .search-bar input:focus ~ ul li:nth-child(1)::after, header .search-bar input:valid ~ ul li:nth-child(1)::after {
+  transition-delay: 400ms;
+}
+header .search-bar input:focus ~ ul li:nth-child(2)::after, header .search-bar input:valid ~ ul li:nth-child(2)::after {
+  transition-delay: 600ms;
+}
+header .search-bar input:focus ~ ul li:nth-child(3)::after, header .search-bar input:valid ~ ul li:nth-child(3)::after {
+  transition-delay: 800ms;
+}
+header .search-bar input:focus ~ ul li:nth-child(4)::after, header .search-bar input:valid ~ ul li:nth-child(4)::after {
+  transition-delay: 1000ms;
+}
+header .search-bar input:focus ~ ul li:nth-child(5)::after, header .search-bar input:valid ~ ul li:nth-child(5)::after {
+  transition-delay: 1200ms;
+}
+header .search-bar input:focus ~ ul li:nth-child(6)::after, header .search-bar input:valid ~ ul li:nth-child(6)::after {
+  transition-delay: 1400ms;
+}
+header .search-bar label {
+  width: 40vw;
+  position: relative;
+}
+header .search-bar ul {
   position: absolute;
-  top: 3px;
-  color: #0d9488;
+  top: 38px;
+  left: -4px;
+  margin: 0;
+  list-style: none;
+  padding-left: 22px;
+  position: absolute;
+  display: flex;
   pointer-events: none;
-  transition: all ease 0.2s;
+  transition: 200ms;
 }
-header .drop-pfp .pfp .pfp-pic {
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
+header .search-bar ul li {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: transparent;
+  pointer-events: none;
+  transition: 500ms ease-in-out;
 }
-header .drop-pfp .drop-content {
-  display: none;
+header .search-bar ul li ::selection {
+  color: transparent;
+}
+header .search-bar ul li::after, header .search-bar ul li::before {
+  color: black;
+  position: absolute;
+  transition: 500ms ease-in-out;
+}
+header .search-bar ul li::before {
+  top: -20px;
+}
+header .search-bar ul li::after {
+  top: -63px;
+  transform: scale(0) rotate(210deg);
+  filter: blur(20px);
+}
+header .search-bar ul li[s]::before {
+  content: attr(s) "s";
+  transition-delay: 200ms;
+}
+header .search-bar ul li[s]::after {
+  content: attr(s) "s";
+  left: 12px;
+  color: #666;
+}
+header .search-bar ul li[e]::before {
+  content: attr(e) "e";
+  transition-delay: 400ms;
+}
+header .search-bar ul li[e]::after {
+  content: attr(e) "e";
+  left: 24px;
+  color: #666;
+}
+header .search-bar ul li[a]::before {
+  content: attr(a) "a";
+  transition-delay: 600ms;
+}
+header .search-bar ul li[a]::after {
+  content: attr(a) "a";
+  left: 36px;
+  color: #666;
+}
+header .search-bar ul li[r]::before {
+  content: attr(r) "r";
+  transition-delay: 800ms;
+}
+header .search-bar ul li[r]::after {
+  content: attr(r) "r";
+  left: 48px;
+  color: #666;
+}
+header .search-bar ul li[c]::before {
+  content: attr(c) "c";
+  transition-delay: 1000ms;
+}
+header .search-bar ul li[c]::after {
+  content: attr(c) "c";
+  left: 60px;
+  color: #666;
+}
+header .search-bar ul li[h]::before {
+  content: attr(h) "h";
+  transition-delay: 1200ms;
+}
+header .search-bar ul li[h]::after {
+  content: attr(h) "h";
+  left: 72px;
+  color: #666;
 }
 
 .iconside {

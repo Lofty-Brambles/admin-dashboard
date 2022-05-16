@@ -96,63 +96,12 @@ header {
 	@include helper.flex( row, space-between );
 	@include helper.gradient(  helper.$repel-heavy, helper.$bodyBG, vertical );
 	width: min( 80vw, 100vw - 300px );
+	padding-top: 20px;
 
 	& .search-bar {
 		@include helper.flex();
 		gap: 10px;
-	}
-
-	& .search-wrap {
-		@include helper.flex( column, flex-start );
-		position: relative;
-		padding: 10px;
-		margin-bottom: 30px;
-		width: 40%;
-		font-family: helper.$tarp;
-		font-weight: 1500;
-
-		& input {
-			display: block;
-			height: 20px;
-			width: 100%;
-	
-			background-color: transparent;
-			border: none;
-			border-bottom: 1px solid #fff;
-			color: helper.$medium;
-	
-			&:focus {
-				outline: none;
-				border-bottom: 2px solid helper.$medium;
-			}
-	
-			&:focus ~label,
-			&:not( :placeholder-shown ) ~label {
-				top: -12px;
-				color: helper.$medium;
-			}
-		}
-	
-		& label {
-			position: absolute;
-			top: 3px;
-			color: helper.$medium;
-			pointer-events: none;
-			transition: all ease 0.2s;
-		}
-	}
-
-	& .drop-pfp {
-		& .pfp {
-			.pfp-pic {
-				@include helper.box(50px);
-				@include helper.circle();
-			}
-		}
-
-		& .drop-content {
-			display: none;
-		}
+		padding: 0px 20px;
 	}
 }
 
