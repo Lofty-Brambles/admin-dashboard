@@ -96,7 +96,7 @@ header {
 	@include helper.flex( row, space-between );
 	@include helper.gradient(  helper.$repel-heavy, #777, vertical );
 	width: min( 80vw, 100vw - 300px );
-	padding: 20px 30px;
+	padding: 20px 30px 20px 0px;
 
 	& .search-bar {
 		@include helper.flex( row, center, flex-end );
@@ -163,7 +163,7 @@ header {
 			@include helper.flex();
 			padding: 10px;
 			gap: 10px;
-			@include helper.gradient( helper.$heavier, helper.$medium, horizontaal );
+			@include helper.gradient( helper.$heavier, helper.$medium, horizontal );
 			border-radius: 10px 0px;
 	
 			font-family: helper.$titan;
@@ -173,7 +173,7 @@ header {
 			@include helper.shadow( #000 );
 
 			&:hover {
-				@include helper.gradient( helper.$light, helper.$lightest, horizontal);
+				@include helper.gradient( helper.$light, helper.$lightest, horizontal );
 			}
 
 			.pfp-pic {
