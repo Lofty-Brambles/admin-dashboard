@@ -548,7 +548,8 @@ header .drop-pfp .drop-content {
 }
 
 .main {
-  max-height: calc(100vh - 70px);
+  height: calc(100vh - 70px);
+  overflow-y: scroll;
   padding: 20px;
   display: grid;
   grid-template-columns: 3fr 1fr;
