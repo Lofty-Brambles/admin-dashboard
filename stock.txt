@@ -1,0 +1,4 @@
+<div class="dashboard">
+					<span class="material-icons icon-white">space_dashboard</span>
+					Dashboard
+				</div>
