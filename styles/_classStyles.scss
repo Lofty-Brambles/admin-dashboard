@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Tapestry&family=Titan+One&display=swap');
 
 $sidebar: 250px;
-$header: 70px;
+$header: 110px;
 
 $lightest: #5eead4;
 $light: #10b981;
@@ -24,10 +24,9 @@ $titan: "Titan One", cursive;
 	font-size: 36px;
 }
 
-@mixin grid( $rows: 1, $cols: 1 ) {
-	display: grid;
-	grid-template-columns: repeat( $cols, 1fr );
-	grid-template-rows: repeat( $rows, 1fr );
+.iconside {
+	height: 24px;
+	width: 24px;
 }
 
 @mixin flex( $dir: row, $just-cont: center, $alg-it: center, $wrp: nowrap ) {
